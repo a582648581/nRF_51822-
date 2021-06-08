@@ -4,6 +4,9 @@ Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
 
 Section Cross References
 
+    main.o(i.main) refers to boards.o(i.bsp_board_leds_init) for bsp_board_leds_init
+    main.o(i.main) refers to boards.o(i.bsp_board_led_invert) for bsp_board_led_invert
+    main.o(i.main) refers to system_nrf51.o(.data) for SystemCoreClock
     nrf_nvic.o(i.sd_nvic_critical_region_enter) refers to nrf_nvic.o(.data) for .data
     nrf_nvic.o(i.sd_nvic_critical_region_exit) refers to nrf_nvic.o(.data) for .data
     nrf_adc.o(i.nrf_adc_configure) refers to nrf_adc.o(i.nrf_adc_input_select) for nrf_adc_input_select
@@ -425,18 +428,11 @@ Removing Unused input sections from the image.
     Removing boards.o(i.bsp_board_button_state_get), (32 bytes).
     Removing boards.o(i.bsp_board_buttons_init), (36 bytes).
     Removing boards.o(i.bsp_board_led_idx_to_pin), (12 bytes).
-    Removing boards.o(i.bsp_board_led_invert), (32 bytes).
-    Removing boards.o(i.bsp_board_led_off), (20 bytes).
     Removing boards.o(i.bsp_board_led_on), (20 bytes).
     Removing boards.o(i.bsp_board_led_state_get), (32 bytes).
-    Removing boards.o(i.bsp_board_leds_init), (40 bytes).
-    Removing boards.o(i.bsp_board_leds_off), (18 bytes).
     Removing boards.o(i.bsp_board_leds_on), (18 bytes).
     Removing boards.o(i.bsp_board_pin_to_button_idx), (36 bytes).
     Removing boards.o(i.bsp_board_pin_to_led_idx), (36 bytes).
-    Removing boards.o(i.nrf_gpio_cfg), (40 bytes).
-    Removing boards.o(i.nrf_gpio_pin_write), (24 bytes).
-    Removing boards.o(.constdata), (8 bytes).
     Removing app_error.o(.rev16_text), (4 bytes).
     Removing app_error.o(.revsh_text), (4 bytes).
     Removing app_error.o(i.app_error_handler), (28 bytes).
@@ -511,7 +507,7 @@ Removing Unused input sections from the image.
     Removing nrf_log_backend_serial.o(i.__ARM_common_switch8), (26 bytes).
     Removing depilogue.o(i.__ARM_clz), (46 bytes).
 
-114 unused section(s) (total 8942 bytes) removed from the image.
+107 unused section(s) (total 8760 bytes) removed from the image.
 
 ==============================================================================
 
@@ -522,54 +518,54 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      192  arm_startup_nrf51.o(RESET)
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isxdigit_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isupper_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isprint_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isspace_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ispunct_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  islower_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isprint_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ispunct_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isspace_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalnum_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ctype_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isupper_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isgraph_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isxdigit_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isdigit_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  iscntrl_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isblank_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalpha_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalnum_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ctype_o.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
     ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
@@ -624,9 +620,20 @@ Image Symbol Table
     i.__scatterload_copy                     0x000001d0   Section       14  handlers.o(i.__scatterload_copy)
     i.__scatterload_null                     0x000001de   Section        2  handlers.o(i.__scatterload_null)
     i.__scatterload_zeroinit                 0x000001e0   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.is_manual_peripheral_setup_needed      0x000001f0   Section        0  system_nrf51.o(i.is_manual_peripheral_setup_needed)
-    is_manual_peripheral_setup_needed        0x000001f1   Thumb Code    66  system_nrf51.o(i.is_manual_peripheral_setup_needed)
-    i.main                                   0x00000238   Section        0  main.o(i.main)
+    i.bsp_board_led_invert                   0x000001f0   Section        0  boards.o(i.bsp_board_led_invert)
+    i.bsp_board_led_off                      0x00000210   Section        0  boards.o(i.bsp_board_led_off)
+    i.bsp_board_leds_init                    0x00000224   Section        0  boards.o(i.bsp_board_leds_init)
+    i.bsp_board_leds_off                     0x0000024c   Section        0  boards.o(i.bsp_board_leds_off)
+    i.is_manual_peripheral_setup_needed      0x00000260   Section        0  system_nrf51.o(i.is_manual_peripheral_setup_needed)
+    is_manual_peripheral_setup_needed        0x00000261   Thumb Code    66  system_nrf51.o(i.is_manual_peripheral_setup_needed)
+    i.main                                   0x000002a8   Section        0  main.o(i.main)
+    i.nrf_gpio_cfg                           0x000002e8   Section        0  boards.o(i.nrf_gpio_cfg)
+    nrf_gpio_cfg                             0x000002e9   Thumb Code    40  boards.o(i.nrf_gpio_cfg)
+    i.nrf_gpio_pin_write                     0x00000310   Section        0  boards.o(i.nrf_gpio_pin_write)
+    nrf_gpio_pin_write                       0x00000311   Thumb Code    18  boards.o(i.nrf_gpio_pin_write)
+    .constdata                               0x00000328   Section        8  boards.o(.constdata)
+    m_board_led_list                         0x00000328   Data           4  boards.o(.constdata)
+    m_board_btn_list                         0x0000032c   Data           4  boards.o(.constdata)
     .data                                    0x20000000   Section        4  system_nrf51.o(.data)
     __tagsym$$used                           0x20000000   Number         0  system_nrf51.o(.data)
     STACK                                    0x20000008   Section     2048  arm_startup_nrf51.o(STACK)
@@ -732,9 +739,13 @@ Image Symbol Table
     __scatterload_copy                       0x000001d1   Thumb Code    14  handlers.o(i.__scatterload_copy)
     __scatterload_null                       0x000001df   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x000001e1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x00000239   Thumb Code     4  main.o(i.main)
-    Region$$Table$$Base                      0x0000023c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000025c   Number         0  anon$$obj.o(Region$$Table)
+    bsp_board_led_invert                     0x000001f1   Thumb Code    24  boards.o(i.bsp_board_led_invert)
+    bsp_board_led_off                        0x00000211   Thumb Code    14  boards.o(i.bsp_board_led_off)
+    bsp_board_leds_init                      0x00000225   Thumb Code    36  boards.o(i.bsp_board_leds_init)
+    bsp_board_leds_off                       0x0000024d   Thumb Code    18  boards.o(i.bsp_board_leds_off)
+    main                                     0x000002a9   Thumb Code    56  main.o(i.main)
+    Region$$Table$$Base                      0x00000330   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000350   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_nrf51.o(.data)
     __initial_sp                             0x20000808   Data           0  arm_startup_nrf51.o(STACK)
 
@@ -746,9 +757,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000260, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000354, Max: 0x00040000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000025c, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000350, Max: 0x00040000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -769,17 +780,25 @@ Memory Map of the image
     0x000001de   0x000001de   0x00000002   Code   RO         1127    i.__scatterload_null  mc_p.l(handlers.o)
     0x000001e0   0x000001e0   0x0000000e   Code   RO         1128    i.__scatterload_zeroinit  mc_p.l(handlers.o)
     0x000001ee   0x000001ee   0x00000002   PAD
-    0x000001f0   0x000001f0   0x00000048   Code   RO          747    i.is_manual_peripheral_setup_needed  system_nrf51.o
-    0x00000238   0x00000238   0x00000004   Code   RO            3    i.main              main.o
-    0x0000023c   0x0000023c   0x00000020   Data   RO         1124    Region$$Table       anon$$obj.o
+    0x000001f0   0x000001f0   0x00000020   Code   RO          256    i.bsp_board_led_invert  boards.o
+    0x00000210   0x00000210   0x00000014   Code   RO          257    i.bsp_board_led_off  boards.o
+    0x00000224   0x00000224   0x00000028   Code   RO          260    i.bsp_board_leds_init  boards.o
+    0x0000024c   0x0000024c   0x00000012   Code   RO          261    i.bsp_board_leds_off  boards.o
+    0x0000025e   0x0000025e   0x00000002   PAD
+    0x00000260   0x00000260   0x00000048   Code   RO          747    i.is_manual_peripheral_setup_needed  system_nrf51.o
+    0x000002a8   0x000002a8   0x00000040   Code   RO            3    i.main              main.o
+    0x000002e8   0x000002e8   0x00000028   Code   RO          265    i.nrf_gpio_cfg      boards.o
+    0x00000310   0x00000310   0x00000018   Code   RO          266    i.nrf_gpio_pin_write  boards.o
+    0x00000328   0x00000328   0x00000008   Data   RO          267    .constdata          boards.o
+    0x00000330   0x00000330   0x00000020   Data   RO         1124    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0000025c, Size: 0x00000808, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000350, Size: 0x00000808, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0000025c   0x00000004   Data   RW          748    .data               system_nrf51.o
-    0x20000004   0x00000260   0x00000004   PAD
+    0x20000000   0x00000350   0x00000004   Data   RW          748    .data               system_nrf51.o
+    0x20000004   0x00000354   0x00000004   PAD
     0x20000008        -       0x00000800   Zero   RW          736    STACK               arm_startup_nrf51.o
 
 
@@ -791,13 +810,14 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         56         18        192          0       2048        656   arm_startup_nrf51.o
-         4          0          0          0          0       4931   main.o
+       174         24          8          0          0       7613   boards.o
+        64          8          0          0          0      21227   main.o
        232         36          0          4          0       2087   system_nrf51.o
 
     ----------------------------------------------------------------------
-       292         54        224          4       2052       7674   Object Totals
+       528         86        232          4       2052      31583   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          0          4          0   (incl. Padding)
+         2          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -834,15 +854,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       380         70        224          4       2052       7850   Grand Totals
-       380         70        224          4       2052       7850   ELF Image Totals
-       380         70        224          4          0          0   ROM Totals
+       616        102        232          4       2052      31495   Grand Totals
+       616        102        232          4       2052      31495   ELF Image Totals
+       616        102        232          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  604 (   0.59kB)
+    Total RO  Size (Code + RO Data)                  848 (   0.83kB)
     Total RW  Size (RW Data + ZI Data)              2056 (   2.01kB)
-    Total ROM Size (Code + RO Data + RW Data)        608 (   0.59kB)
+    Total ROM Size (Code + RO Data + RW Data)        852 (   0.83kB)
 
 ==============================================================================
 
