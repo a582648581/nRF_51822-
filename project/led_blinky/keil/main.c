@@ -9,7 +9,7 @@ int main()
 {
 		//GPIO初始化
 		//初始化LED1
-	
+		
 	
 //  例程代码	
 //	 /* Configure board. */

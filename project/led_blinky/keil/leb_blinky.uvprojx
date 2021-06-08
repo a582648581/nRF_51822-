@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>NRF51822  BOARD_PCA10028 BSP_DEFINES_ONLY NRF51 SWI_DISABLE0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\components\libraries\util;..\..\..\components\libraries\log;..\..\..\components\libraries\log\src;..\..\..\components\drivers_nrf\nrf_soc_nosd;..\..\..\components\drivers_nrf\hal;..\..\..\components\drivers_nrf\uart;..\..\..\components\drivers_nrf\delay;..\..\..\components\boards;..\keil</IncludePath>
+              <IncludePath>..\..\..\components\libraries\util;..\..\..\components\libraries\log;..\..\..\components\libraries\log\src;..\..\..\components\drivers_nrf\nrf_soc_nosd;..\..\..\components\drivers_nrf\hal;..\..\..\components\drivers_nrf\uart;..\..\..\components\drivers_nrf\delay;..\..\..\components\boards;..\keil;..\..\..\..\Bare engineering template</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -462,6 +462,16 @@
               <FileName>nrf_log_frontend.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\components\libraries\log\src\nrf_log_frontend.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Doc</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\README.md</FilePath>
             </File>
           </Files>
         </Group>
