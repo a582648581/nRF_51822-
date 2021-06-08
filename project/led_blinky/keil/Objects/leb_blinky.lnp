@@ -1,0 +1,19 @@
+--cpu Cortex-M0
+".\objects\main.o"
+".\objects\nrf_nvic.o"
+".\objects\nrf_soc.o"
+".\objects\nrf_adc.o"
+".\objects\boards.o"
+".\objects\app_error.o"
+".\objects\app_error_weak.o"
+".\objects\nrf_assert.o"
+".\objects\sdk_errors.o"
+".\objects\app_util_platform.o"
+".\objects\nrf_log_backend_serial.o"
+".\objects\nrf_log_frontend.o"
+".\objects\arm_startup_nrf51.o"
+".\objects\system_nrf51.o"
+--library_type=microlib --strict --scatter ".\Objects\leb_blinky.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\leb_blinky.map" -o .\Objects\leb_blinky.axf
